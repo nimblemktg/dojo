@@ -1,0 +1,120 @@
+.red-page-title-wrapper{
+	position: relative;
+	background-image: url('../images/page-title-bg-none.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+	padding: 142px 0 100px 0;
+	margin: 0 0 120px 0;
+	@media (max-width: $screen_md_max){
+		background-attachment: scroll !important;
+		margin: 0 0 75px 0;
+		padding: 120px 0 80px 0;
+	}
+	@media (max-width: $screen_xxs_max - 1){
+		padding: 70px 0 70px 0;
+	}
+	 
+	&:before{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		content: "";
+		display: block;
+		z-index: 0;
+		background-color: rgba(253,253,253,0.8);
+	}
+	
+	&.layout1{
+		.red-breadcrumb{
+			margin-top: 5px;
+		}
+	}
+	&.layout2{
+		.red-breadcrumb{
+			margin-bottom: 20px;
+		}
+	}
+	&.layout3{
+		.red-breadcrumb{
+			@media (max-width: $screen_md_max){
+				margin-top: 20px;
+			}
+			.red-breadcrumb-inner{
+			    margin: 0 -8px;
+			    >span{
+		    	    padding: 0 8px;
+			    }
+			}
+		}
+	}
+	&.layout4{
+		.red-breadcrumb{
+			@media (max-width: $screen_md_max){
+				margin-bottom: 20px;
+			}
+			.red-breadcrumb-inner{
+			    margin: 0 -8px;
+			    >span{
+		    	    padding: 0 8px;
+			    }
+			}
+		}
+	}
+
+}
+.red-page-title{
+	.red-page-title-text{
+		font-family: $extra_font;
+		color: $page_title_color;
+		font-size: 45px;
+		line-height: 1.1;
+		margin: 0;
+		letter-spacing: -0.03em;
+		text-transform: uppercase;
+		font-weight: 700;
+		@media (max-width: $screen_sm_max){
+			font-size: 30px;
+		}
+		@media (max-width: $screen_xxs_max){
+			font-size: 24px;
+		}
+	}
+	.sub-title{
+		font-family: $extra_font;
+		color: $page_title_color;
+	    font-size: 24.55px;
+	    font-weight: 300;
+	    letter-spacing: 0.03em;
+	    display: block;
+	    margin-top: 9px;
+	    line-height: 1.2;
+	    @media (max-width: $screen_xxs_max){
+			font-size: 20px;
+		}
+	}
+}
+.red-breadcrumb{
+ 	color: $breadcrumb_color;
+	font-family: $extra_font2;
+	font-size: 22px; 
+	@media (max-width: $screen_md_max){
+		font-size: 20px;
+	}
+	@media (max-width: $screen_xxs_max){
+		font-size: 18px;
+	}
+	font-size: 18px;
+    font-style: italic;
+	a{
+		color: $breadcrumb_color;
+		&:hover{
+			color: $breadcrumb_color_hover;
+		}
+	}
+	.esep{
+		font-size: 14px;
+	    margin: 0 5px 0 4px;
+	}
+}

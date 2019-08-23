@@ -1,0 +1,166 @@
+.btn,
+.btn-default,
+button,
+.button,
+input[type="button"],
+input[type="submit"],
+.vc_general.vc_btn3.btn,
+.vc_general.vc_btn3.btn-default{
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	line-height: 23px;
+	vertical-align: top;
+	position: relative;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: $btn_inside_space;
+
+	font-family: $btn_font_family;
+	font-size: $btn_font_size;
+	font-weight: $btn_font_weight;
+	text-transform: $btn_font_transform;
+	letter-spacing: $btn_font_spacing;
+	color: $btn_default_color;
+	
+	border-style: $btn_default_border_style;
+	border-width: $btn_default_border_width;
+	border-color: $btn_default_border_color;
+
+	background-color: $btn_default_bg_color;
+	background-image: $btn_default_bg_image;
+	background-size: $btn_default_bg_size;
+	background-position: $btn_default_bg_position;
+	background-attachment: $btn_default_bg_attachment;
+
+	@include border-radius($btn_default_border_radius);
+	@include transition();
+	&:hover{
+		color: $btn_default_color_hover;
+		border-color: $btn_default_border_color_hover;
+		background-color: $btn_default_bg_hover;
+		@if ($btn_default_bg_hover_image == "inherit"){
+			background-image: $btn_default_bg_image;
+		} @else {
+			background-image: $btn_default_bg_hover_image;
+		}
+		background-size: $btn_default_bg_hover_size;
+		background-position: $btn_default_bg_hover_position;
+		background-attachment: $btn_default_bg_hover_attachment;
+		
+	}
+	&.btn-alt{
+		color: $btn_default_bg_color;
+    	background-color: transparent;
+    	background-image: none;
+    	&:hover{
+    		color: $btn_default_color;
+    		background-color: $btn_default_bg_color;
+    	}
+    	&.btn-white{
+			background-color: $white;
+			&:hover{
+				color: $btn_default_color;
+    			background-color: $btn_default_bg_color;
+			}
+		}
+    }
+    &.btn-white{
+		background-color: $white;
+		&:hover{
+			color: $btn_default_color;
+    		background-color: $btn_default_bg_color;
+		}
+	}
+	&.btn-white-alt{
+		background-color: transparent;
+		color: $white;
+		border-color: $white;
+		&:hover{
+			color: $btn_default_color;
+    		background-color: $btn_default_bg_color;
+    		border-color: $btn_default_border_color_hover;
+		}
+	}
+}
+
+.btn-primary,
+.vc_general.vc_btn3.btn-primary{
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	line-height: 23px;
+	vertical-align: top;
+	position: relative;
+	overflow: hidden;
+	white-space: nowrap;
+
+    padding: $btn_inside_space;
+
+    font-family: $btn_primary_font_family;
+    font-size: $btn_primary_font_size;
+    font-weight: $btn_primary_font_weight;
+    text-transform: $btn_primary_font_transform;
+    
+    color: $btn_primary_color;
+    
+    border-style: $btn_primary_border_style;
+    border-width: $btn_primary_border_width;
+    border-color: $btn_primary_border_color;
+
+    background-color: $btn_primary_bg_color;
+    background-image: $btn_primary_bg_image;
+    background-size: $btn_primary_bg_size;
+    background-position: $btn_primary_bg_position;
+    background-attachment: $btn_primary_bg_attachment;
+
+    @include border-radius($btn_primary_border_radius);
+    @include transition();
+    &:hover{
+            color: $btn_primary_color_hover;
+            border-color: $btn_primary_color_hover;
+            background-color: $btn_primary_bg_hover;
+            @if ($btn_primary_bg_hover_image == "inherit"){
+    			background-image: $btn_primary_bg_image;
+    		} @else {
+    			background-image: $btn_primary_bg_hover_image;
+    		}
+            background-size: $btn_primary_bg_hover_size;
+            background-position: $btn_primary_bg_hover_position;
+            background-attachment: $btn_primary_bg_hover_attachment;
+            
+    }
+    &.btn-alt{
+		color: $btn_primary_bg_color;
+    	background-color: transparent;
+    	background-image: none;
+    	&:hover{
+    		color: $btn_primary_color;
+    		background-color: $btn_primary_bg_color;
+    	}
+    }
+}
+
+/* Button Size */
+.btn-small{
+	padding: 7.5px 15px;
+	font-size: #{$btn_font_size - 2};
+}
+.btn-medium{
+	padding: 10px 32px;
+    border-radius: 45px;
+	font-size: #{$btn_font_size - 1};
+}
+.btn-medium-large{
+	padding: 12.5px 45px;
+    border-radius: 50px;
+	font-size: 12px;
+}
+.btn-large{
+	padding: 14.5px 45px;
+	font-size: $btn_font_size;
+}
+.btn-block{
+	width: 100%;
+	display: block;
+}

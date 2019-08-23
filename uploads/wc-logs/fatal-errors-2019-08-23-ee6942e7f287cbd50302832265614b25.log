@@ -1,0 +1,10 @@
+2019-08-23T20:58:24+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in E:\XAMPP\XH\htdocs\wp-content\plugins\the-events-calendar\common\src\Tribe\REST\Messages_Interface.php on line 4
+
+2019-08-23T20:58:27+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in E:\XAMPP\XH\htdocs\wp-content\plugins\custom-post-type-ui\inc\taxonomies.php on line 13
+
+2019-08-23T20:58:58+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in E:\XAMPP\XH\htdocs\wp-content\plugins\the-events-calendar\src\Tribe\Integrations\Manager.php on line 9
+
+2019-08-23T21:01:00+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in E:\XAMPP\XH\htdocs\wp-content\plugins\kirki\modules\customizer-styling\class-kirki-modules-customizer-styling.php on line 17
+
+2019-08-23T21:02:15+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in E:\XAMPP\XH\htdocs\wp-content\plugins\Ultimate_VC_Addons\admin\bsf-core\index.php on line 20
+

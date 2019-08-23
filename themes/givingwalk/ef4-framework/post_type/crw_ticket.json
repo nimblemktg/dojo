@@ -1,0 +1,132 @@
+{
+  "meta_fields": {
+    "amount_mask": {
+      "id": "amount_mask",
+      "type": "select"
+    },
+    "ticket_price": {
+      "id": "ticket_price",
+      "type": "number"
+    },
+    "ticket_for_event": {
+      "id": "ticket_for_event",
+      "type": "select",
+      "options": "  = Please Select Events\npost_type:tribe_events"
+    },
+    "ticket_unit_price": {
+      "id": "ticket_unit_price",
+      "type": "select"
+    },
+    "start_date_time": {
+      "id": "start_date_time",
+      "type": "datetime"
+    },
+    "ticket_max_stock": {
+      "id": "ticket_max_stock",
+      "type": "number"
+    },
+    "max_quantity": {
+      "id": "max_quantity",
+      "type": "number"
+    },
+    "ticket_sold": {
+      "id": "ticket_sold",
+      "type": "number"
+    },
+    "end_date_time": {
+      "id": "end_date_time",
+      "type": "datetime"
+    }
+  },
+  "js_field": {
+    "available": {
+      "field": "available",
+      "source": "min-notempty|meta:max_quantity,math|meta:ticket_max_stock{-}meta:ticket_sold"
+    },
+    "price_view": {
+      "field": "price_view",
+      "source": "amount|[mask]-meta:amount_mask,[amount]-meta:ticket_price,[currency]-meta:ticket_unit_price"
+    },
+    "end_time": {
+      "field": "end_time",
+      "source": "date-d\/m\/Y H:i|meta:end_date_time"
+    },
+    "id": {
+      "field": "id",
+      "source": "post:id"
+    },
+    "max_stock": {
+      "field": "max_stock",
+      "source": "meta:ticket_max_stock"
+    },
+    "price_mask": {
+      "field": "price_mask",
+      "source": "amount|[mask]-meta:amount_mask,[amount]-{-value-},[currency]-meta:ticket_unit_price"
+    },
+    "sold": {
+      "field": "sold",
+      "source": "meta:ticket_sold"
+    },
+    "description": {
+      "field": "description",
+      "source": "post:content"
+    },
+    "name": {
+      "field": "name",
+      "source": "post:title"
+    },
+    "symbol": {
+      "field": "symbol",
+      "source": "currency-symbol|meta:ticket_unit_price"
+    },
+    "price": {
+      "field": "price",
+      "source": "meta:ticket_price"
+    }
+  },
+  "js_group_field": {
+    "event_name": {
+      "field": "event_name",
+      "source": "subpost-post:title|[id]-meta:ticket_for_event"
+    },
+    "start_time": {
+      "field": "start_time",
+      "source": "date-d\/m\/Y H:i|subpost-meta:_EventStartDate|[id]-meta:ticket_for_event"
+    },
+    "end_time": {
+      "field": "end_time",
+      "source": "date-d\/m\/Y H:i|[subpost-meta:_EventEndDate|[id]-meta:ticket_for_event"
+    }
+  },
+  "meta_name_swap": {
+    "customer_name": {
+      "meta_name": "customer_name",
+      "form_name": "name",
+      "title": "Customer Name"
+    },
+    "customer_email": {
+      "meta_name": "customer_email",
+      "form_name": "email",
+      "title": "Customer Email"
+    },
+    "customer_messages": {
+      "meta_name": "customer_messages",
+      "form_name": "messages",
+      "title": "Customer Messages"
+    },
+    "customer_phone": {
+      "meta_name": "customer_phone",
+      "form_name": "phone",
+      "title": "Customer Phone"
+    }
+  },
+  "payment_success_action": {
+    "add_item_sold": {
+      "name": "add_item_sold",
+      "type": "add",
+      "target": "item-meta:ticket_sold",
+      "params": "payment_item:quantity"
+    }
+  },
+  "form_type": "purchase"
+}

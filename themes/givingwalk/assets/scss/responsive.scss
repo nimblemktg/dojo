@@ -1,0 +1,84 @@
+/* custom 5 columns */ 
+@media (min-width: 576px) {
+	.col-sm-24{
+		flex: 0 0 20%;
+        max-width: 20%;
+	} 
+}
+@media (min-width: 768px) {
+	.col-md-24{
+		flex: 0 0 20%;
+        max-width: 20%;
+	} 
+}
+@media (min-width: 992px) {
+	.col-lg-24{
+		flex: 0 0 20%;
+        max-width: 20%;
+	} 
+}
+@media (min-width: 1200px) {
+	.col-xl-24{
+		flex: 0 0 20%;
+        max-width: 20%;
+	}
+}
+
+@media screen and (min-width: $sm_screen){
+	.margin-left-70.wpb_column > .vc_column-inner {
+		margin-left: 70px;
+	}
+	.max-width-396{
+		max-width: 396px;
+	}
+	.max-width-430{
+		max-width: 430px;
+	}
+	.max-width-500{
+		max-width: 500px;
+	}
+	.max-width-350{
+		max-width: 350px;
+	}
+	.max-width-320{
+		max-width: 320px;
+	}
+	.max-width-420{
+		max-width: 420px;
+	}
+	.max-width-600{
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	.wpb_single_image.min-width-115-percent img{
+		min-width: 115%;
+	}
+	.el-max-width-270 .event-content-wrap{
+		max-width: 270px;
+		margin-left: 20px;
+	} 
+	.modal.show .modal-dialog{
+		@include transform(translate(0, 32px))
+	}
+	.admin-bar .modal.show .modal-dialog{
+		@include transform(translate(0, 32px));
+	}
+	
+}
+
+@media (max-width: $screen_md_max){
+ 	.vc_empty_space{
+ 		display: none;
+ 	}
+ 	.vc_empty_space.hide-in-sm{
+ 		display: block;
+ 	}
+ 	.vc_empty_space.mobile-display-block{
+ 		display: block;
+ 	}
+}
+@media (max-width: $screen_sm_max){
+ 	.vc_empty_space.hide-in-sm{
+ 		display: none;
+ 	}
+}

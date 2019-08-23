@@ -1,0 +1,8 @@
+{
+  "meta_fields": {
+    "avatar_image": {
+      "id": "avatar_image",
+      "type": "image"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+/*!
+ * Bootstrap Grid v4.0.0 (https://getbootstrap.com)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+@at-root {
+  @-ms-viewport { width: device-width; } // stylelint-disable-line at-rule-no-vendor-prefix
+}
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@import "../libs/bootstrap/functions";
+@import "../libs/bootstrap/variables";
+@import "../libs/bootstrap/code";
+
+@import "../libs/bootstrap/mixins/breakpoints";
+@import "../libs/bootstrap/mixins/grid-framework";
+@import "../libs/bootstrap/mixins/grid";
+@import "../libs/bootstrap/mixins/hover";
+@import "../libs/bootstrap/mixins/text-hide";
+@import "../libs/bootstrap/mixins/text-emphasis";
+@import "../libs/bootstrap/mixins/text-truncate";
+@import "../libs/bootstrap/mixins/clearfix";
+@import "../libs/bootstrap/mixins/gradients";
+@import "../libs/bootstrap/mixins/forms";
+
+@import "../libs/bootstrap/grid";
+
+@import "../libs/bootstrap/carousel";
+
+@import "../libs/bootstrap/forms";
+@import "../libs/bootstrap/transitions";
+
+@import "../libs/bootstrap/utilities/display";
+@import "../libs/bootstrap/utilities/flex";
+@import "../libs/bootstrap/utilities/text";
+@import "../libs/bootstrap/utilities/clearfix";

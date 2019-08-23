@@ -1,0 +1,7 @@
+@media only screen and (min-width: 580px) {
+    .mobile { display: none; }
+    .mobile_logo img { max-width: 52px; }
+}
+@media only screen and (max-width: 579px) {
+    .desktop { display: none; }
+}

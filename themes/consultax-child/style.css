@@ -1,0 +1,75 @@
+/*
+Theme Name:     Consultax Child
+Theme URI:      http://wpdemo.oceanthemes.net/consultax/
+Description:    Make your modifications to [Parent Theme] in this child theme.
+Author:         Oceanthemes
+Author URI:     http://oceanthemes.net/
+Version:        1.0
+Template:       consultax
+*/
+
+@import url("../consultax/style.css");
+
+/* =Theme customization starts here
+------------------------------------------------------- */
+i.fa { font: normal normal normal 14px/1 FontAwesome;}
+.title-shadlow {
+    color: #ffffff;
+    text-shadow: 1px 1px 5px #000;
+}
+@media only screen and (min-width: 992px){
+    .site-header.sticky-header.sticked .header-topbar, .sticky-header.sticked .main-header-top {
+        display: block;
+    }
+}
+.footer-bottom a,
+.footer-bottom a:visited,
+.footer-bottom .text-second,
+.footer-bottom .pagelink:hover,
+.footer-bottom .content-area .inner-post .post-link:hover,
+.footer-bottom .fun-facts.s2 .icon-fact i,
+.footer-bottom .woocommerce-message::before {
+    color: #b9b9b9;
+}
+.super-dropdown .super-field-wrapper p, .super-countries .super-field-wrapper p {
+    margin-bottom: 0;
+}
+.sticky-header.sticked, .header-fixed { z-index: 9999999; }
+.super-button-wrap p { margin-bottom: 0; }
+.gform_wrapper select { height: 34px; }
+.container .gform_wrapper.gf_browser_chrome .gfield_checkbox li input,
+.container .gform_wrapper.gf_browser_chrome .gfield_checkbox li input[type=checkbox],
+.container .gform_wrapper.gf_browser_chrome .gfield_radio li input[type=radio] { margin-top: 0px; }
+.container .gform_wrapper ul.gfield_checkbox li,
+.container .gform_wrapper ul.gfield_radio li {
+    overflow: inherit;
+}
+.popmake .pum-form--style-default button {
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    margin: 10px auto;
+    padding: 10px 5px;
+    background: #9e0087;
+    max-width: 250px;
+    cursor: pointer;
+    border: solid 2px #000;
+    border-radius: 3px;
+    box-shadow: 0px 3px 11px #000;
+    transition: 0.4s;
+}
+.popmake .pum-form--style-default button:hover {
+    color: #fff;
+    background: #000;
+    border: solid 2px #9e0087;
+    box-shadow: unset;
+}
+@media only screen and (min-width: 641px){
+	.container .gform_wrapper .top_label li.gfield.gf_right_third:not(.gfield_time_hour):not(.gfield_time_minute):not(.gfield_time_ampm) { width: 32.2%; }
+	.container .gform_wrapper li.gfield.gf_list_2col ul.gfield_checkbox li { width: 49%; }
+	.container .gform_wrapper .top_label li.gfield.gf_first_quarter:not(.gfield_time_hour):not(.gfield_time_minute):not(.gfield_time_ampm),
+	.container .gform_wrapper .top_label li.gfield.gf_fourth_quarter:not(.gfield_time_hour):not(.gfield_time_minute):not(.gfield_time_ampm),
+	.container .gform_wrapper .top_label li.gfield.gf_second_quarter:not(.gfield_time_hour):not(.gfield_time_minute):not(.gfield_time_ampm),
+	.container .gform_wrapper .top_label li.gfield.gf_third_quarter:not(.gfield_time_hour):not(.gfield_time_minute):not(.gfield_time_ampm) { width: 24.5%; }
+
+}

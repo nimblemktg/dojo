@@ -1,0 +1,31 @@
+{
+  "meta_fields": {
+    "event_quote": {
+      "id": "event_quote",
+      "type": "textarea"
+    },
+    "event_facilities": {
+      "id": "event_facilities",
+      "type": "textarea"
+    },
+    "disable_get_involved": {
+      "id": "disable_get_involved",
+      "type": "checkbox",
+      "options": "1 = Yes"
+    },
+    "close_ticket": {
+      "id": "close_ticket",
+      "type": "checkbox",
+      "options": "1 = Yes"
+    },
+    "event_gallery": {
+      "id": "event_gallery",
+      "type": "gallery"
+    },
+    "event_tickets": {
+      "id": "event_tickets",
+      "type": "checkbox",
+      "options": "post_type:crw_ticket|where:ticket_for_event={{post_id}}"
+    }
+  }
+}

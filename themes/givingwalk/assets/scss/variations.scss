@@ -1,0 +1,752 @@
+/* Color */
+$white:					#fff;
+$black:					#000;
+$grey_color: 			#666;
+$available_color: 		#7db701;
+
+/* Font Size */
+/* body font size 15px */
+$large_font_size:		$body_font_size + 3px;
+$medium_font_size:		$body_font_size + 1px;
+$small_font_size:		$body_font_size - 1px;
+$xsmall_font_size:		$body_font_size - 2px;
+
+/* Background */
+$overlay_bg: 	 rgba(#fff, 1);
+$overlay_color:  $primary_color;
+
+/* Responsive Size */
+$sm_screen : 	1200px;
+
+$screen_xlg_min: 1600px;
+
+$screen_lg_max: 1599px;
+$screen_lg_min: 1366px;
+
+/* Medium Screen */
+$screen_md_max:	1199px;
+$screen_md_min:	992px;
+
+/* Small Screen */
+$screen_sm_max: 991px;
+$screen_sm_min: 768px;
+
+/* Extra Small Screen */
+$screen_xs_max: 767px;
+
+$screen_xs_min: 577px;
+
+$screen_xxs_max :  576px;
+
+/* Typography */
+$fontAwesome:				'FontAwesome';
+$fontPe7:					'Pe-icon-7-stroke';
+$fontIon:					'Ionicons';
+
+/* Border */
+$main_border:				1px solid #E7E7E7;
+$main_border2:				2px solid #E7E7E7;
+$main_border3:				3px solid #E7E7E7;
+$main_border_width:			1px;
+$main_border_color:			#E7E7E7;
+
+/* Meta */
+$meta_font: 				$body_font_family;
+$meta_color: 				#ABABAB;
+$meta_font_size:			$small_font_size;
+
+/* Header */
+$header_height :    		$opt_header_height;
+$mobile_header_height :    	$opt_mobile_header_height;
+$header_shadow :				2px 2px 3px #e5e5e5;
+$logo_w :						$header_logo_w;
+
+/* Button */
+$btn_inside_space: 15px 45px;
+
+/* Form */
+$form_field_font_family: 	$extra_font;
+$form_field_font_size: 		$small_font_size;
+$form_field_border: 		1px solid $form_border_color;
+$form_field_radius: 		27.5px;
+$form_field_inside_space:	13px 35px;
+
+/* Socials Color */
+$facebook_color:  	 #4990E2;
+$google_color: 	  	 #ff4c4c;
+$twitter_color:  	 #2CC7F0;
+$youtube_color:  	 #E9152F;
+$rss_color:			 #faa33d;
+$skype_color: 		 #41BBE9;
+$yahoo_color: 		 #ab47ac;
+$dribbble_color: 	 #ff70b7;
+$flickr_color:       #ff48a3;
+$linkedin_color: 	 #4c94db;
+$vimeo_color: 		 #35c6ea;
+$pinterest_color: 	 #e13138;
+$github_color: 	     #3f91cb;
+$instagram_color:    #db944c;
+$tumblr_color: 		 #426d9b;
+$behance_color: 	 #1879fd;
+$stumbleupon_color:  #ff5c30;
+$dropbox_color: 	 #17a3eb;
+$soundcloud_color: 	 #ff7e30;
+$lastfm_color: 	 	 #f34320;
+$deviantart_color: 	 #6a8a7b;
+$digg_color: 	 	 #75788d;
+$xing_color: 	 	 #1a8e8c;
+$share_color: 	 	 #25a774;
+$wordpress_color: 	 #2592c3;
+$delicious_color: 	 #ff9233;
+$reddit_color: 	 	 #377bda;
+$apple_color: 	 	 #b3b5b8;
+$vk_color: 	 		 #4778ac;
+
+
+$status_color:		#ffc000;
+/* Header */
+$break_header_h: $header_height / 2;
+
+/* page title */
+$page_title_color: #333333;
+$breadcrumb_color: #262626;
+$breadcrumb_color_hover: $link_color_hover; 
+
+/* Mixins  */
+/* overlay position  */
+@mixin overlay-pos($position : absolute, $space : 20px){
+	position: $position;
+	top: $space;
+	right: $space;
+	bottom: $space;
+	left: $space;
+}
+
+/* Vertical Align */
+@mixin vertical-align($width : 100%, $top : 50%, $position : absolute){
+	top: $top;
+	left: 0;
+	right: 0;
+	width: #{$width};
+	position: #{$position};
+	@include css3-prefix('transform', 'translateY(-50%)');
+}
+/* Horizontal Align */
+@mixin horizontal-align($position : absolute){
+	left: 50%;
+	position: #{$position};
+	@include css3-prefix('transform', 'translateX(-50%)');
+}
+/* Center Align */
+@mixin center-align($position : absolute){
+	top: 50%;
+	left: 50%;
+	position: #{$position};
+	@include css3-prefix('transform', 'translate(-50%,-50%)');
+}
+/* Center Bottom Align */
+@mixin center-bottom($position : absolute){
+	left: 50%;
+	bottom: 0;
+	position: #{$position};
+	@include css3-prefix('transform', 'translateX(-50%)');
+}
+/* image fit */
+@mixin image-fit($variation : cover){
+	height: 100%;
+	width: 100%;
+	object-fit: $variation;
+	-o-object-fit: $variation;
+	-moz-object-fit: $variation;
+	-ms-filter-object-fit: $variation;
+	-webkit-object-fit: $variation;
+}
+/* Image black and white */
+@mixin image-bw($variation : grayscale(100%)){
+	-webkit-filter: $variation ; /* Safari 6.0 - 9.0 */
+    filter: $variation ;
+}
+/* Box shadow */
+@mixin givingwalk_boxshadow($color : rgba($black,0.1)){
+	@include box-shadow(0, 2px, 20px, 0, $color);
+}
+@mixin givingwalk_boxshadow2($color : $primary_color){
+	@include box-shadow(0, 2px, 11px, 0, $color);
+}
+@mixin givingwalk_vc_col_boxshadow($color : rgba($black, 0.1)){
+	@include box-shadow(0, 21px, 21px, 0, $color);
+}
+/* Spin */
+@include keyframes (CMSSpin) {
+	100% {
+		@include transform( rotate(360deg) );
+	}
+}
+/* Page Loading */
+	/* Newton */
+	@keyframes left {
+	  25% {
+	    transform: translateX(-250%);
+	    animation-timing-function: ease-in;
+	  }
+	  50% {
+	    transform: translateX(-150%);
+	  }
+	}
+
+	@keyframes right {
+	  50% {
+	    transform: translateX(150%);
+	  }
+	  75% {
+	    transform: translateX(250%);
+	    animation-timing-function: ease-in;
+	  }
+	  100% {
+	    transform: translateX(150%);
+	  }
+	}
+	/* wave */
+	@keyframes jump1 {
+	  12% {
+	    transform: translate(20px, -40px);
+	    animation-timing-function: ease-in;
+	  }
+	  24% {
+	    transform: translate(40px, 0);
+	  }
+	  100% {
+	    transform: translate(40px, 0);
+	  }
+	}
+	@keyframes jump2 {
+	  12% {
+	    transform: translate(0, 0);
+	  }
+	  24% {
+	    transform: translate(20px, -40px);
+	    animation-timing-function: ease-in;
+	  }
+	  36% {
+	    transform: translate(40px, 0);
+	  }
+	  100% {
+	    transform: translate(40px, 0);
+	  }
+	}
+	@keyframes jump3 {
+	  24% {
+	    transform: translate(0, 0);
+	  }
+	  36% {
+	    transform: translate(20px, -40px);
+	    animation-timing-function: ease-in;
+	  }
+	  48% {
+	    transform: translate(40px, 0);
+	  }
+	  100% {
+	    transform: translate(40px, 0);
+	  }
+	}
+	@keyframes wipe {
+	  48% {
+	    transform: translateX(-120px);
+	  }
+	  100% {
+	    transform: translateX(-120px);
+	  }
+	}
+	/* circus */
+	@keyframes position {
+	  50% { 
+	    left: 100%;
+	  }
+	}
+
+	@keyframes size {
+	  50% {
+	    transform: scale(.5,.5);
+	  }
+	}
+	/* Atom */
+	@keyframes AtomPosition {
+	  50% {
+	    top: 80px;
+	    left: 80px;
+	  }
+	}
+	@keyframes size {
+	  50% {
+	    transform: scale(0.5, 0.5);
+	  }
+	}
+	@keyframes zindex {
+	  100% {
+	    z-index: 10;
+	  }
+	}
+	@keyframes shrink {
+	  50% {
+	    transform: scale(0.9, 0.9);
+	  }
+	}
+	/* Fusstion */
+	@keyframes ball1 {
+	  50% {
+	    top: -100%;
+	    left: 200%;
+	    background: rgba( 127, 127, 0, .5);
+	  }
+	  100% {
+	    top: 50%;
+	    left: 100%;
+	    background: rgba( 0, 255, 0, .5);
+	    z-index: 2;
+	  }
+	}
+
+	@keyframes ball2 {
+	  50% {
+	    top: 200%;
+	    left: 200%;
+	    background: rgba( 0, 255, 255, .5);
+	  }
+	  100% {
+	    top: 100%;
+	    left: 50%;
+	    background: rgba( 0, 0, 255, .5);
+	    z-index: 1;
+	  }
+	}
+
+	@keyframes ball3 {
+	  50% {
+	    top: 200%;
+	    left: -100%;
+	    background: rgba( 255, 0, 255, .5);
+	  }
+	  100% {
+	    top: 50%;
+	    left: 0%;
+	    background: rgba( 255, 255, 0, .5);
+	    z-index: 2;
+	  }
+	}
+
+	@keyframes ball4 {
+	  50% {
+	    top: -100%;
+	    left: -100%;
+	    background: rgba( 255, 127, 0, .5);
+	  }
+	  100% {
+	    top: 0%;
+	    left: 50%;
+	    background: rgba( 255, 0, 0, .5);
+	    z-index: 1;
+	  }
+	}
+	/* Mitosis */
+	@keyframes invert {
+	  100% {
+	    transform: rotate(180deg);
+	  }
+	}
+	@keyframes Mitosisball1 {
+	  12% {
+	    transform: none;
+	  }
+	  26% {
+	    transform: translateX(25%) scale(1, 0.8);
+	  }
+	  40% {
+	    transform: translateX(50%) scale(0.8, 0.8);
+	  }
+	  60% {
+	    transform: translateX(50%) scale(0.8, 0.8);
+	  }
+	  74% {
+	    transform: translate(50%, 25%) scale(0.6, 0.8);
+	  }
+	  88% {
+	    transform: translate(50%, 50%) scale(0.6, 0.6);
+	  }
+	  100% {
+	    transform: translate(50%, 50%) scale(0.6, 0.6);
+	  }
+	}
+	@keyframes Mitosisball2 {
+	  12% {
+	    transform: none;
+	  }
+	  26% {
+	    transform: translateX(25%) scale(1, 0.8);
+	  }
+	  40% {
+	    transform: translateX(50%) scale(0.8, 0.8);
+	  }
+	  60% {
+	    transform: translateX(50%) scale(0.8, 0.8);
+	  }
+	  74% {
+	    transform: translate(50%, -25%) scale(0.6, 0.8);
+	  }
+	  88% {
+	    transform: translate(50%, -50%) scale(0.6, 0.6);
+	  }
+	  100% {
+	    transform: translate(50%, -50%) scale(0.6, 0.6);
+	  }
+	}
+	@keyframes Mitosisball3 {
+	  12% {
+	    transform: none;
+	  }
+	  26% {
+	    transform: translateX(-25%) scale(1, 0.8);
+	  }
+	  40% {
+	    transform: translateX(-50%) scale(0.8, 0.8);
+	  }
+	  60% {
+	    transform: translateX(-50%) scale(0.8, 0.8);
+	  }
+	  74% {
+	    transform: translate(-50%, 25%) scale(0.6, 0.8);
+	  }
+	  88% {
+	    transform: translate(-50%, 50%) scale(0.6, 0.6);
+	  }
+	  100% {
+	    transform: translate(-50%, 50%) scale(0.6, 0.6);
+	  }
+	}
+	@keyframes Mitosisball4 {
+	  12% {
+	    transform: none;
+	  }
+	  26% {
+	    transform: translateX(-25%) scale(1, 0.8);
+	  }
+	  40% {
+	    transform: translateX(-50%) scale(0.8, 0.8);
+	  }
+	  60% {
+	    transform: translateX(-50%) scale(0.8, 0.8);
+	  }
+	  74% {
+	    transform: translate(-50%, -25%) scale(0.6, 0.8);
+	  }
+	  88% {
+	    transform: translate(-50%, -50%) scale(0.6, 0.6);
+	  }
+	  100% {
+	    transform: translate(-50%, -50%) scale(0.6, 0.6);
+	  }
+	}
+	/* Flower */
+	@keyframes Flowerball1 {
+	  6.25% {
+	    transform: rotate(90deg);
+	  }
+	  12.5% {
+	    transform: rotate(90deg);
+	  }
+	  18.75% {
+	    transform: rotate(180deg);
+	  }
+	  25% {
+	    transform: rotate(180deg);
+	  }
+	  31.25% {
+	    transform: rotate(270deg);
+	  }
+	  37.5% {
+	    transform: rotate(270deg);
+	  }
+	  43.75% {
+	    transform: rotate(360deg);
+	  }
+	  50% {
+	    transform: rotate(360deg);
+	  }
+	  56.25% {
+	    transform: rotate(450deg);
+	  }
+	  75% {
+	    transform: rotate(450deg);
+	  }
+	  87.5% {
+	    transform: rotate(405deg) scale(1.3, 1.3);
+	  }
+	  100% {
+	    transform: rotate(360deg) scale(1, 1);
+	  }
+	}
+	@keyframes Flowerball2 {
+	  12.5% {
+	    transform: rotate(0);
+	  }
+	  18.75% {
+	    transform: rotate(90deg);
+	  }
+	  25% {
+	    transform: rotate(90deg);
+	  }
+	  31.25% {
+	    transform: rotate(180deg);
+	  }
+	  37.5% {
+	    transform: rotate(180deg);
+	  }
+	  43.75% {
+	    transform: rotate(270deg);
+	  }
+	  50% {
+	    transform: rotate(270deg);
+	  }
+	  56.25% {
+	    transform: rotate(360deg);
+	  }
+	  62.5% {
+	    transform: rotate(360deg);
+	  }
+	  68.75% {
+	    transform: rotate(450deg);
+	  }
+	  75% {
+	    transform: rotate(450deg);
+	  }
+	  87.5% {
+	    transform: rotate(405deg) scale(1.3, 1.3);
+	  }
+	  100% {
+	    transform: rotate(360deg) scale(1, 1);
+	  }
+	}
+	@keyframes Flowerball3 {
+	  25% {
+	    transform: rotate(0);
+	  }
+	  31.25% {
+	    transform: rotate(90deg);
+	  }
+	  75% {
+	    transform: rotate(90deg);
+	  }
+	  87.5% {
+	    transform: rotate(45deg) scale(1.3, 1.3);
+	  }
+	  100% {
+	    transform: rotate(0) scale(1, 1);
+	  }
+	}
+	@keyframes Flowerball4 {
+	  37.5% {
+	    transform: rotate(0);
+	  }
+	  43.75% {
+	    transform: rotate(90deg);
+	  }
+	  75% {
+	    transform: rotate(90deg);
+	  }
+	  87.5% {
+	    transform: rotate(45deg) scale(1.3, 1.3);
+	  }
+	  100% {
+	    transform: rotate(0) scale(1, 1);
+	  }
+	}
+	/* Clock */
+	@keyframes clock {
+	  100% {
+	    transform: rotate(360deg);
+	  }
+	}
+	@keyframes clock1 {
+	  0% {
+	    transform: rotate(-135deg);
+	  }
+	  30% {
+	    transform: rotate(-450deg);
+	  }
+	  100% {
+	    transform: rotate(-450deg);
+	  }
+	}
+	@keyframes clock2 {
+	  5% {
+	    transform: rotate(-90deg);
+	  }
+	  35% {
+	    transform: rotate(-405deg);
+	  }
+	  100% {
+	    transform: rotate(-405deg);
+	  }
+	}
+	@keyframes clock3 {
+	  10% {
+	    transform: rotate(-45deg);
+	  }
+	  40% {
+	    transform: rotate(-360deg);
+	  }
+	  100% {
+	    transform: rotate(-360deg);
+	  }
+	}
+	@keyframes clock4 {
+	  15% {
+	    transform: rotate(0);
+	  }
+	  45% {
+	    transform: rotate(-315deg);
+	  }
+	  100% {
+	    transform: rotate(-315deg);
+	  }
+	}
+	/* Washing Machine */
+	@keyframes wash {
+	  100% {
+	    transform: rotate(1800deg);
+	  }
+	}
+	/* Pulse */
+	@keyframes pulse {
+	  0% {
+	    transform: scale(0.1, 0.1);
+	    opacity: 1;
+	    border-width: 50px;
+	  }
+	  100% {
+	    transform: scale(1, 1);
+	    opacity: 0;
+	    border-width: 0;
+	  }
+	}
+	
+	@-webkit-keyframes scaleDisappear {
+	  0% {
+	    opacity: 1;
+	    -webkit-transform: scale(1);
+	  }
+	  60% {
+	    opacity: 0;
+	    -webkit-transform: scale(1.3);
+	  }
+	  100% {
+	    opacity: 1;
+	    -webkit-transform: scale(1);
+	  }
+	}
+	@-moz-keyframes scaleDisappear {
+	  0% {
+	    opacity: 1;
+	    -moz-transform: scale(1);
+	  }
+	  60% {
+	    opacity: 0;
+	    -moz-transform: scale(1.3);
+	  }
+	  100% {
+	    opacity: 1;
+	    -moz-transform: scale(1);
+	  }
+	}
+	@-ms-keyframes scaleDisappear {
+	  0% {
+	    opacity: 1;
+	    -ms-transform: scale(1);
+	  }
+	  60% {
+	    opacity: 0;
+	    -ms-transform: scale(1.3);
+	  }
+	  100% {
+	    opacity: 1;
+	    -ms-transform: scale(1);
+	  }
+	}
+	@-o-keyframes scaleDisappear {
+	  0% {
+	    opacity: 1;
+	    -o-transform: scale(1);
+	  }
+	  60% {
+	    opacity: 0;
+	    -o-transform: scale(1.3);
+	  }
+	  100% {
+	    opacity: 1;
+	    -o-transform: scale(1);
+	  }
+	}
+	@keyframes scaleDisappear {
+	  0% {
+	    opacity: 1;
+	    transform: scale(1);
+	  }
+	  60% {
+	    opacity: 0;
+	    transform: scale(1.3);
+	  }
+	  100% {
+	    opacity: 1;
+	    transform: scale(1);
+	  }
+	}
+	.scaleDisappear {
+	  -webkit-animation: scaleDisappear 350ms ease-in-out;
+	  -moz-animation: scaleDisappear 350ms ease-in-out;
+	  -ms-animation: scaleDisappear 350ms ease-in-out;
+	  -o-animation: scaleDisappear 350ms ease-in-out;
+	  animation: scaleDisappear 350ms ease-in-out;
+	}
+/* Socails Color */
+@mixin givingwalk_socials_color ($tag : color, $prior : ''){
+	$social_colors: 
+		'facebook' $facebook_color,
+		'google' $google_color,
+		'twitter' $twitter_color,
+		'youtube' $youtube_color,
+		'rss' $rss_color,
+		'skype' $skype_color,
+		'yahoo' $yahoo_color,
+		'dribbble' $dribbble_color,
+		'flickr' $flickr_color,
+		'linkedin' $linkedin_color,
+		'vimeo' $vimeo_color,
+		'pinterest' $pinterest_color,
+		'github' $github_color,
+		'instagram' $instagram_color,
+		'tumblr' $tumblr_color,
+		'behance' $behance_color,
+		'stumbleupon_colo' $stumbleupon_color,
+		'dropbox' $dropbox_color,
+		'soundcloud' $soundcloud_color,
+		'lastfm' $lastfm_color,
+		'deviantart' $deviantart_color,
+		'digg' $digg_color,
+		'xing' $xing_color,
+		'share' $share_color,
+		'wordpress' $wordpress_color,
+		'delicious' $delicious_color,
+		'reddit' $reddit_color,
+		'apple' $apple_color,
+		'vk' $vk_color
+	;
+	@each $social in $social_colors {
+	    &.#{nth($social, 1)},
+	    &[class*="#{nth($social, 1)}"],
+	    &[href*="#{nth($social, 1)}"] {
+	    	#{$tag}: nth($social, 2);
+	    	@if($tag == 'background-color'){
+	    		color: $white;
+	    	} 
+	    }
+	}
+}

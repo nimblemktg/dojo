@@ -1,0 +1,109 @@
+{
+  "meta_fields": {
+    "subject": {
+      "id": "subject",
+      "type": "textarea"
+    },
+    "donation_raised": {
+      "id": "donation_raised",
+      "type": "number",
+      "readonly": "yes"
+    },
+    "amount_mask": {
+      "id": "amount_mask",
+      "type": "select"
+    },
+    "donors": {
+      "id": "donors",
+      "type": "number",
+      "readonly": "yes"
+    },
+    "volunteer_help": {
+      "id": "volunteer_help",
+      "type": "textarea"
+    },
+    "needed_help": {
+      "id": "needed_help",
+      "type": "textarea"
+    },
+    "currency": {
+      "id": "currency",
+      "type": "select",
+      "options": "currencies",
+      "description": " = Use Global Setting\ncurrencies"
+    },
+    "sample_amount": {
+      "id": "sample_amount",
+      "type": "textarea"
+    },
+    "location": {
+      "id": "location",
+      "type": "text"
+    }
+  },
+  "js_field": {
+    "title": {
+      "field": "title",
+      "source": "post:title"
+    }
+  },
+  "js_group_field": {
+    "currency": {
+      "field": "currency",
+      "source": "currency-symbol|meta:currency"
+    }
+  },
+  "js_special_field": {
+    "sample_amount": {
+      "field": "sample_amount",
+      "source": "meta:sample_amount"
+    }
+  },
+  "meta_name_swap": {
+    "customer_name": {
+      "meta_name": "customer_name",
+      "form_name": "name"
+    },
+    "customer_email": {
+      "meta_name": "customer_email",
+      "form_name": "email"
+    },
+    "customer_phone": {
+      "meta_name": "customer_phone",
+      "form_name": "phone"
+    },
+    "customer_messages": {
+      "meta_name": "customer_messages",
+      "form_name": "messages"
+    }
+  },
+  "payment_success_action": {
+    "add_donation_raised": {
+      "name": "add_donation_raised",
+      "type": "add",
+      "target": "item-meta:donation_raised",
+      "params": "payment_item:price"
+    },
+    "add_donors": {
+      "name": "add_donors",
+      "type": "add",
+      "target": "item-meta:donors",
+      "params": "1"
+    }
+  },
+  "payment_disable_action": {
+    "sub_donation_raised": {
+      "name": "sub_donation_raised",
+      "type": "sub",
+      "target": "item-meta:donation_raised",
+      "params": "payment_item:price"
+    },
+    "sub_donors": {
+      "name": "sub_donors",
+      "type": "sub",
+      "target": "item-meta:donors",
+      "params": "1"
+    }
+  },
+  "form_type": "donate"
+}

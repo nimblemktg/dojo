@@ -1,0 +1,322 @@
+/* OWL Carousel */
+.owl-carousel:not(.owl-loaded){
+	display: none;
+}
+/* OWL Carousel */
+.red-owl-wrap{
+	position: relative;
+	.red-grid{
+		margin: -15px;
+		.red-carousel-item-wrap{
+			padding: 15px;
+		}
+	}
+	.red-carousel {
+		position: static;
+		.red-carousel-item{
+			margin-bottom: 30px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		.owl-item img{
+			width: auto;
+			max-width: 100%;
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+	.owl-nav{
+		margin: 30px -15px 0;
+		> div{
+			width: 45px;
+			height: 45px;
+			background-color: $white;
+			margin: 0 3.5px;
+			border-radius: 50%;
+			text-align: center;
+			color: $heading_color;
+
+			@include box-shadow(0,0,40px,rgba(0,0,0,0.09));
+			@include transition();
+			>i{
+				line-height: 45px;
+				font-size: 24px;	
+			}
+			&:hover{
+				background-color: $primary_color;
+				color: #fff;
+			}
+		}
+		&.nav-vertical{
+			margin: 0 30px;
+			display: -ms-flexbox;
+		    display: flex;
+		    -ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		    -ms-flex-pack: justify !important;
+    		justify-content: space-between !important;
+			@include vertical-align(auto, calc(50% - 15px));
+			&.outside{
+				margin: 0 -60px;
+			}
+		}
+		.owl-dots{
+			display: inline-block;
+			margin: 0 5px;
+			vertical-align: inherit;
+		}
+	}
+	/* Progress */
+	.dots-progress + .owl-nav {
+		display: -ms-flexbox;
+	    display: flex;
+	    -ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	    -webkit-box-pack: center!important;
+	    -ms-flex-pack: center!important;
+	    justify-content: center!important;
+		.owl-dots{
+		    display: -ms-flexbox;
+		    display: flex;
+		    -ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		    margin: 20px 0 0;
+			.owl-dot{
+				-ms-flex-preferred-size: 0;
+			    flex-basis: 0;
+			    -ms-flex-positive: 1;
+			    flex-grow: 1;
+			    max-width: 100%;
+
+			    height: 10px;
+			    border: none;
+			    background-color: $primary_color;
+			    margin: 0;
+			    @include border-radius(0);
+			    &:hover,
+			    &.active{
+			    	background-color: $primary_color;
+			    }
+			}
+		}
+	}
+
+	.owl-dots{
+		margin-top: 30px;
+		vertical-align: top;
+		.owl-dot{
+			width: 16px;
+			height: 16px;
+			margin: 0 6px;
+			border: 3px solid transparent;
+			overflow: hidden;
+			display: inline-block;
+			cursor: pointer;
+			background-position:  center center;
+			background-repeat:  no-repeat;
+			position: relative;
+			@include transition();
+			@include border-radius(50%);
+			@include opacity(0.5);
+			span{
+				width: 10px;
+				height: 10px;
+				display: block;
+				background-color: $primary_color;
+				border-color: $primary_color;
+			}
+			&:hover,
+			&.active{
+				background-color: $primary_color;
+				border-color: $primary_color;
+				@include opacity(1);
+				span{
+					background-color: $primary_color;
+					border-color: $primary_color;
+				}
+			}
+		}
+		&.dotContainerTop{
+			margin-top: 0;
+			margin-bottom: 30px;
+		}
+		 
+		/* Thumnail */
+		&.dots-thumbnail{
+			.owl-dot{
+				width: 150px;
+				height: 150px;
+				padding: 45px;
+				margin: 0 -10px;
+				border:none;
+				position: relative;
+				overflow: visible;
+				@include opacity(1);
+				img{
+					width: 100%;
+					height: 100%;
+					background-color: $white;
+					position: relative;
+					z-index: 1;
+				}
+				&:before{
+					content: "";
+					display: block;
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					visibility: hidden;
+					background: url('../images/baby-flower.png') center center no-repeat;
+					@include transform(scale(0.5));
+					@include opacity(0);
+					@include transition();
+				}
+				&:hover,
+				&.active{
+					padding: 25px;
+					background-color: transparent;
+					@include css3-prefix('box-shadow', 'none');
+					&:before{
+						visibility: visible;
+						@include transform(scale(1));
+						@include opacity(1);
+					}
+				}
+			}
+			&.dotContainerTop{
+				margin-bottom: 35px;
+			}
+		}
+		/* Progress */
+		&.dots-progress{
+		    display: -ms-flexbox;
+		    display: flex;
+		    -ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+			.owl-dot{
+				-ms-flex-preferred-size: 0;
+			    flex-basis: 0;
+			    -ms-flex-positive: 1;
+			    flex-grow: 1;
+			    max-width: 100%;
+
+			    height: 10px;
+			    border: none;
+			    background-color: $primary_color;
+			    margin: 0;
+			    @include border-radius(0);
+			    &:hover,
+			    &.active{
+			    	background-color: $primary_color;
+			    }
+			}
+		}
+	}
+}
+/* Magnific Popup */
+.mfp-hide{
+	display: none;
+}
+
+/* Revo slider */
+.rev_slider{
+	.tp-thumb-image{
+		border-radius: 5px;
+	}
+	.silent-font{
+		&.underline-white{
+			position: relative;
+			&:after{
+				content: "";
+		    	position: absolute;
+		    	left: 0;
+		    	bottom: 4px;
+		    	width: 100%;
+		    	height: 4px;
+		    	background-color: $white;
+			}
+		}
+	}
+	.tp-bullets.ares.vertical{
+		.tp-bullet{
+			width: 10px;
+			height: 10px;
+			.tp-bullet-title{
+				opacity: 1;
+				visibility: visible;
+				@include transform('none');
+				background: transparent;
+				color: $white;
+				font-family: $extra_font;
+				font-size: 18px;
+				font-weight: 500;
+				letter-spacing: -0.03em;
+				line-height: 20px;
+				@include transition();
+				@media (max-width: $screen_md_max){
+					display: none;
+				}
+				&:after{
+					content: none;
+				}
+			}
+			&:before{
+				content: "";
+				width: 24px;
+				height: 24px;
+				background-color: transparent;
+				border: 1px dashed $primary_color;
+				display: inline-block;
+				border-radius: 50%;
+				margin-top: -10px;
+				margin-left: -8px;
+				@include transition();
+				visibility: hidden;
+				opacity: 0;
+			}
+			&:hover,&.selected{
+				background-color: $primary_color;
+				.tp-bullet-title{
+					color: $primary_color;
+				}
+				&:before{
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+		}
+	}
+	.tp-leftarrow.tparrows.custom{
+		background-color: transparent;
+		&:before{
+			color: $primary_color;
+			font-size: 35px;
+			@include transition();
+		}
+		&:hover:before{
+			color: $heading_color;
+		}
+	}
+	.tp-rightarrow.tparrows.custom{
+		background-color: transparent;
+		&:before{
+			color: $primary_color;
+			font-size: 35px;
+			@include transition();
+		}
+		&:hover:before{
+			color: $heading_color;
+		}
+	}
+}
+
+
+.letter-spacing-003{
+	letter-spacing: -0.03em !important;
+}
+.letter-spacing-0075{
+	letter-spacing: -0.075em !important;
+}

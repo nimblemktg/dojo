@@ -1,0 +1,35 @@
+#sidebar-area{
+	@media (max-width: $screen_sm_max){
+		margin-top: 60px;
+	}
+	aside{
+		margin-top: 58px;
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+	.wg-title{
+		font-family: $extra_font;
+		font-size: 18px;
+		letter-spacing: -0.05em;
+	}
+	.widget_archive,
+	.widget_categories,
+	.widget_pages,
+	.widget_meta,
+	.widget_recent_comments,
+	.widget_recent_entries,
+	.widget_rss,
+	.widget_nav_menu,
+	.widget_layered_nav,
+	.widget_product_categories,
+	.widget_givingwalkrecentpost{
+		margin-top: 57px;
+	}
+	ul, ol {
+		li{
+		    line-height: 34px;
+	    	 
+	    }
+	}
+}

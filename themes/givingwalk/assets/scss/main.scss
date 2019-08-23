@@ -1,0 +1,895 @@
+body{  
+	color: $body_font_color;
+	font-family: $body_font_family;
+	font-size: $body_font_size;
+	font-weight: $body_font_weight;
+	line-height: 1.733333333333333;
+	word-wrap: break-word;
+	padding: 0;
+	margin: 0;
+}
+.text-primary,.primary-color{
+	color: $primary_color !important;
+}
+.text-whire{
+	color: #fff;
+}
+.silent-font{
+	font-family: $extra_font2;
+}
+.font-weight-500{
+	font-weight: 500;
+}
+/* Page */
+#red-page{
+	overflow-x: hidden;
+	&.red-boxed{
+		max-width: $boxed_width;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+.parallax_overlay{
+	position: absolute !important;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.bg_overlay{
+	position: absolute !important;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.top-overlap-140{
+	margin-top: -140px;
+}
+/**
+ * Page loading
+ * @since 1.0.0
+ * @author Red Team
+*/
+#red-loading{
+	position: relative;
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+	@include transition();
+	.loader{
+		width: 100px;
+		height: 100px;
+		background: $black;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -50px 0 0 -50px;
+		@include animation(CMSSpin 0.5s linear infinite);
+	}
+	.spinner{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -50px 0 0 -50px;
+	}
+	.newton{
+		.ball {
+		  height: 50px;
+		  width: 50px;
+		  position: absolute;
+		  left: 50%;
+		  top: 50%;
+		}
+		.ball:before{
+		  content: '';
+		  position: absolute;
+		  height: 100%;
+		  width: 100%;
+		  background: $primary_color;
+		  border-radius: 50%;
+		  position: absolute;
+		  margin-left: -50%;
+		  margin-top: -50%;
+		}
+
+		.ball-1:before {
+		  transform: translateX(-150%);
+		  animation: 1s ease-out 0s infinite left;
+		}
+		.ball-2:before {
+		  transform: translateX(-50%);
+		}
+		.ball-3:before {
+		  transform: translateX(50%);
+		}
+		.ball-4:before {
+		  transform: translateX(150%);
+		  animation: 1s ease-out 0s infinite right;
+		}
+	}
+	.wave{
+		&.spinner {
+		  width: 150px;
+		  height: 30px;
+		}
+		.ball {
+		  height: 30px;
+		  width: 30px;
+		  float: left;
+		  background: $primary_color;
+		  border-radius: 50%;
+		  margin-right: 10px;
+		}
+		.ball-1 {
+		  animation: jump3 1.8s infinite ease-out;
+		}
+		.ball-2 {
+		  animation: jump2 1.8s infinite ease-out;
+		}
+		.ball-3 {
+		  animation: jump1 1.8s infinite ease-out;
+		}
+		.ball-4 {
+		  margin-right: 0;
+		  animation: wipe 1.8s infinite cubic-bezier(0.5, 0, 0.5, 1);
+		}
+	}
+
+	.circus{
+		.ball {
+		  height: 50px;
+		  width: 50px;
+		  position: absolute;
+		  left: 50%;
+		  top: 50%;
+		}
+		.ball:before{
+		  content: '';
+		  position: absolute;
+		  height: 100%;
+		  width: 100%;
+		  background: $primary_color;
+		  border-radius: 50%;
+		  margin-left: -50%;
+		  margin-top: -50%;
+		  left: -100%;
+		  
+		  animation: position 2s infinite cubic-bezier(.25,0,.75,1), size 2s infinite cubic-bezier(.25,0,.75,1);
+		}
+
+		.ball-1:before {
+		  animation-delay: 0s, -.5s;
+		}
+		.ball-2:before {
+		  animation-delay: -.5s, -1s;
+		}
+		.ball-3:before {
+		  animation-delay: -1s, -1.5s;
+		}
+		.ball-4:before {
+		  animation-delay: -1.5s, -2s;
+		}
+
+		.spinner {
+		  height: 100%;
+		  width: 100%;
+		  position: absolute;
+		}
+	}
+
+	.atom{
+		&.spinner {
+		  width: 100px;
+		  height: 100px;
+		}
+		.ball-1 {
+		  height: 50%;
+		  width: 50%;
+		  left: 50%;
+		  top: 50%;
+		  position: absolute;
+		  z-index: 1;
+		  animation: shrink 4.5s infinite linear;
+		}
+		.ball-1:before {
+		  content: '';
+		  background: $primary_color;
+		  border-radius: 50%;
+		  height: 100%;
+		  width: 100%;
+		  position: absolute;
+		  top: -50%;
+		  left: -50%;
+		}
+		.ball-2,
+		.ball-3,
+		.ball-4 {
+		  position: absolute;
+		  width: 100%;
+		  height: 100%;
+		  z-index: 0;
+		}
+		.ball-2:before,
+		.ball-3:before,
+		.ball-4:before {
+		  content: '';
+		  height: 20px;
+		  width: 20px;
+		  border-radius: 50%;
+		  background: $primary_color;
+		  top: 0;
+		  left: 0;
+		  margin: 0 auto;
+		  position: absolute;
+		}
+		.ball-2 {
+		  animation: zindex 1.5s 0.75s infinite steps(2, end);
+		}
+		.ball-3 {
+		  transform: rotate(120deg);
+		  animation: zindex 1.5s -0.25s infinite steps(2, end);
+		}
+		.ball-4 {
+		  transform: rotate(240deg);
+		  animation: zindex 1.5s 0.25s infinite steps(2, end);
+		}
+		.ball-2:before {
+		  transform: rotate(0);
+		  animation: AtomPosition 1.5s infinite ease, size 1.5s -1.125s infinite ease;
+		}
+		.ball-3:before {
+		  animation: AtomPosition 1.5s -1s infinite ease, size 1.5s -0.75s infinite ease;
+		}
+		.ball-4:before {
+		  animation: AtomPosition 1.5s -0.5s infinite ease, size 1.5s -0.125s infinite ease;
+		}
+	}
+
+	.fussion{
+		&.spinner {
+		  width: 30px;
+		  height: 30px;
+		}
+		.ball {
+		  height: 50px;
+		  width: 50px;
+		  left: 50%;
+		  top: 50%;
+		  background: rgba( 0, 255, 0, .5);
+		  border-radius: 50%;
+		  float: left;
+		  position: absolute;
+		}
+
+		.ball-1 {
+		  background: rgba( 255, 0, 0, .5);
+		  top: 0;
+		  left: 50%;
+		  animation: ball1 1s 0s ease infinite;
+		  z-index: 1;
+		}
+		.ball-2 {
+		  background: rgba( 0, 255, 0, .5);
+		  top: 50%;
+		  left: 100%;
+		  animation: ball2 1s 0s ease infinite;
+		  z-index: 2;
+		}
+
+		.ball-3 {
+		  background: rgba( 0, 0, 255, .5);
+		  top: 100%;
+		  left: 50%;
+		  animation: ball3 1s 0s ease infinite;
+		  z-index: 1;
+		}
+
+		.ball-4 {
+		  background: rgba( 255, 255, 0, .5);
+		  top: 50%;
+		  left: 0%;
+		  animation: ball4 1s 0s ease infinite;
+		  z-index: 2;
+		}
+	}
+
+	.mitosis{
+		&.spinner {
+		  height: 50px;
+		  width: 50px;
+		  animation: invert 2s infinite steps(2, end);
+		}
+		.ball {
+		  height: 100%;
+		  width: 100%;
+		  position: absolute;
+		  border-radius: 50%;
+		  top: 0;
+		  left: 0;
+		  background: $primary_color;
+		}
+		.ball-1 {
+		  animation: Mitosisball1 1s infinite alternate linear;
+		}
+		.ball-2 {
+		  animation: Mitosisball2 1s infinite alternate linear;
+		}
+		.ball-3 {
+		  animation: Mitosisball3 1s infinite alternate linear;
+		}
+		.ball-4 {
+		  animation: Mitosisball4 1s infinite alternate linear;
+		}
+	}
+
+	.flower{
+		&.spinner {
+		  width: 26.25px;
+		  height: 26.25px;
+		}
+		.ball {
+		  height: 30px;
+		  width: 30px;
+		  position: absolute;
+		  background: $primary_color;
+		  border-radius: 50%;
+		}
+		.ball-1 {
+		  left: -15px;
+		  top: -15px;
+		  transform-origin: 28.125px 28.125px;
+		  animation: Flowerball1 6s infinite linear;
+		}
+		.ball-2 {
+		  left: 11.25px;
+		  top: -15px;
+		  transform-origin: 1.875px 28.125px;
+		  animation: Flowerball2 6s infinite linear;
+		}
+		.ball-3 {
+		  left: 11.25px;
+		  top: 11.25px;
+		  transform-origin: 1.875px 1.875px;
+		  animation: Flowerball3 6s infinite linear;
+		}
+		.ball-4 {
+		  left: -15px;
+		  top: 11.25px;
+		  transform-origin: 28.125px 1.875px;
+		  animation: Flowerball4 6s infinite linear;
+		}
+	}
+	.clock{
+		&.spinner {
+		  width: 50px;
+		  height: 50px;
+		  animation: clock 8s infinite steps(8);
+		}
+		.ball {
+		  height: 50px;
+		  width: 50px;
+		  position: absolute;
+		}
+		.ball:before {
+		  content: '';
+		  border-radius: 50%;
+		  height: 18.31501832px;
+		  width: 18.31501832px;
+		  position: absolute;
+		  background: $primary_color;
+		}
+		.ball-1 {
+		  transform: rotate(-135deg);
+		  animation: clock1 1s ease-in infinite;
+		}
+		.ball-2 {
+		  transform: rotate(-90deg);
+		  animation: clock2 1s ease-in infinite;
+		}
+		.ball-3 {
+		  transform: rotate(-45deg);
+		  animation: clock3 1s ease-in infinite;
+		}
+		.ball-4 {
+		  animation: clock4 1s ease-in infinite;
+		}
+	}
+	.washing-machine{
+		&.spinner {
+		  width: 80px;
+		  height: 80px;
+		  animation: wash 2s infinite alternate cubic-bezier(0.5, 0, 0.5, 1);
+		}
+		.ball-1 {
+		  height: 100%;
+		  width: 100%;
+		  left: 50%;
+		  top: 50%;
+		  position: absolute;
+		  z-index: 1;
+		}
+		.ball-1:before {
+		  content: '';
+		  border-radius: 50%;
+		  border: 15px solid $primary_color;
+		  height: 100%;
+		  width: 100%;
+		  position: absolute;
+		  top: -50%;
+		  left: -50%;
+		  box-sizing: border-box;
+		}
+		.ball-2,
+		.ball-3,
+		.ball-4 {
+		  /* background: rgba(0,255,0,.3); */
+		  width: 80px;
+		  height: 80px;
+		  position: absolute;
+		  z-index: 2;
+		}
+		.ball-2:before,
+		.ball-3:before,
+		.ball-4:before {
+		  border: 5px solid $primary_color;
+		  background: #fff;
+		  content: '';
+		  border-radius: 50%;
+		  width: 15px;
+		  height: 15px;
+		  position: absolute;
+		  left: 27.5px;
+		  top: -5px;
+		}
+		.ball-2 {
+		  transform: rotate(120deg);
+		}
+		.ball-3 {
+		  transform: rotate(240deg);
+		}
+	}
+
+	.pulse{
+		&.spinner {
+		  width: 100px;
+		  height: 100px;
+		}
+		.spinner * {
+		  box-sizing: border-box;
+		}
+		.ball {
+		  height: 100%;
+		  width: 100%;
+		  background: $primary_color;
+		  position: absolute;
+		  border-radius: 50%;
+		  border: 0 solid $primary_color;
+		  animation: pulse 3s infinite;
+		}
+		.ball-2 {
+		  animation-delay: -0.75s;
+		}
+		.ball-3 {
+		  animation-delay: -1.5s;
+		}
+		.ball-4 {
+		  animation-delay: -2.25s;
+		}
+	}
+
+	+ #red-page{
+		visibility: hidden;
+	}
+}
+#red-main{
+	> .row{
+		position: relative;
+	}
+}
+.red-text-primary{
+	color: $primary_color;
+}
+.ltr{
+	#red-main{
+		> .row{
+			> .left-sidebar{
+				@media (min-width: $screen_md_min){
+					-webkit-order: 2;
+    				order: 2;
+				}
+			}
+		}
+	}
+}
+.rtl{
+	#red-main{
+		> .row{
+			> .left-sidebar{
+				@media (min-width: $screen_md_min){
+					-webkit-order: 2;
+    				order: 2;
+				}
+			}
+		}
+	}
+}
+.red-backtotop{
+	position: fixed;
+	bottom: -60px;
+	right: 0;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 40px;
+	background-color: $primary_color;
+	color: $white;
+	cursor: pointer;
+	visibility: hidden;
+	z-index: 2;
+	@include opacity(0);
+	@include transition();
+	&.on{
+		visibility: visible;
+		bottom: 0;
+		@include opacity(1);
+	}
+	&:hover{
+		color: rgba(255,255,255,0.8);
+	}
+}
+/* CSS MouseWheel */
+.red-mousewheel{
+	overflow: hidden;
+	.red-mousewheel-inner{
+		overflow-x: hidden;
+		overflow-y: scroll;
+		width: calc( 100% + 50px);
+		padding-right: 34px;
+		max-height: calc( 100vh - 300px);
+		select,
+		table{
+			width: calc(100% - 50px);
+		}
+	}
+}
+.rtl {
+	.red-mousewheel{
+		.red-mousewheel-inner{
+			padding-right: 0;
+			padding-left: 34px;
+		}
+	}
+}
+/* Overlay Style */
+.overlay-wrap{
+	position: relative;
+	.overlay{
+		background-color: $overlay_bg;
+		color: $overlay_color;
+		padding: 15px;
+		visibility: hidden;
+		@include overlay-pos();
+		@include opacity(0);
+		@include transition();
+		.center-align{
+			@include center-align();
+		}
+		.vertical-align{
+			@include vertical-align();
+		}
+		.horizontal-align{
+			@include horizontal-align();
+		}
+		.center-bottom{
+			@include center-bottom();
+		}
+		h3, a:not(.btn){
+			color: $overlay_color;
+		}
+	}
+	&:hover {
+		.overlay{
+			visibility: visible;
+			@include opacity(1);
+		}
+	}
+}
+/* Icon Group */
+.icon-group{
+	.icon,
+	.added_to_cart{
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		background-color: $white;
+		color: $primary_color !important;
+		display: inline-block;
+		vertical-align: top;
+		font-size: 20px;
+		&:hover{
+			background-color: $primary_color;
+			color: $white !important;
+		}
+	}
+	&.square {
+		margin: 0 -1px 19px;
+		.icon,
+		.added_to_cart{
+			margin: 0 1px;
+		}
+	}
+	&.rounded{
+		.icon,
+		.added_to_cart {
+			@include border-radius(3px);
+		}
+	}
+	&.circle{
+		.icon,
+		.added_to_cart{
+			@include border-radius(50%);
+		}
+	}
+	&.alt{
+		.icon,
+		.added_to_cart{
+			border: 1px solid $primary_color;
+			background-color: transparent;
+		}
+	}
+}
+
+body.is-dark{
+	.causes-archive-grid.layout-causes-1 .entry-info .donation-value .lbl{
+		color: $body_font_color;
+	}
+	&.single-crw_causes .cat-sharing .detail-categories{
+		color: $body_font_color;
+	}
+	.causes-archive-grid.layout-causes-1 .entry-info{
+		background-color: #1c1c1c;
+	}
+	.causes-archive-grid.layout-causes-2 .entry-info{
+		background-color: #1c1c1c;
+	}
+	.causes-archive-grid.layout-causes-2 .entry-info .donation-amount-wrap{
+		background: #222;
+	}
+	&.single-crw_causes .entry-header .progress-amount-wrap{
+		background-color: #1c1c1c;
+	}
+	&.single-crw_causes .entry-header .datetime-progress .give-progress-bar{
+		background: #ddd;
+	}
+	&.single-crw_causes .entry-header .datetime-progress .give-progress-bar span{
+		background-color: #323232;
+	}
+	.single-crw_causes .entry-header .donate-progress .give-progress-bar{
+		background: #ddd;
+	}
+	.comment-list .comment-inner{
+		background-color: #1c1c1c;
+	}
+	.comment-list .comment-content .comment-text{
+		color: $body_font_color;
+	}
+	.tribe-events-list .tribe-events-list-wrap.layout-default .list-event-left{
+		background-color: #161616;
+	}
+	.tribe-events-list .tribe-events-list-wrap.layout-default .list-event-right{
+		background-color: #1c1c1c;
+	}
+	.tribe-events-list .tribe-events-list-wrap.layout-default .list-event-left .col-left:after{
+	    background-color: #6f6f6f;
+	}
+	.tribe-events-list .tribe-events-list-wrap.layout-default .list-event-left .org-name{
+		color: $body_font_color;
+	}
+	.tribe-events-list .tribe-events-list-wrap.layout-default .list-event-left .events-schedule > div{
+		color: $body_font_color;
+	}
+	.tribe-events-list .tribe-events-list-wrap.layout-default .list-event-right .close-ticket{
+	    background-color: #525252;
+	    border-color: #525252;
+	}
+	.tribe-events-list .tribe-events-list-wrap.layout-1 .event-info .events-schedule > div{
+		color: $body_font_color;
+	}
+	.tribe-events-list .tribe-events-list-wrap.layout-1 .event-info{
+		background-color: #1c1c1c;
+	}
+	.tribe-events-list .tribe-events-list-wrap.layout-1 .tribe-events-items:before{
+		display: none;
+	}
+	.tribe-events-list .tribe-events-list-wrap.layout-2 .list-event-action .location{
+		color: $body_font_color;
+	}
+	.tribe-events-list .tribe-events-list-wrap.layout-2 .list-event-action .close-ticket{
+		background-color: #525252;
+	    border-color: #525252;
+	}
+	.tribe-events-list .tribe-events-list-wrap.layout-2 .list-event-action{
+		border-top-color: #6f6f6f;
+	}
+	.tribe-events-single .single-event-top-wrap{
+		background-color: #1c1c1c;
+	}
+	.tribe-events-single .single-event-top-wrap .events-schedule > div{
+		color: $body_font_color;
+	}
+	.tribe-events-single .single-event-top-wrap .event-meta .event-action .close-ticket{
+		background-color: #525252;
+	    border-color: #525252;
+	}
+	.tribe-events-single .single-event-footer .detail-categories{
+		color: $body_font_color;
+	}
+	ul.products .wc-loop-content-wrap a.add_to_cart_button{
+		border-color: #121212;
+	}
+	.navigation.pagination .page-numbers.prev:after,
+	.navigation.pagination .page-numbers.next:after,
+	.navigation.pagination .page-numbers{
+		background-color: #1c1c1c;
+	}
+	.navigation.pagination .page-numbers.prev{
+		background-color: $primary_color;
+	}
+	.navigation.pagination .page-numbers.next:after{
+		background-color: #222;
+	}
+
+	.woocommerce-pagination ul.page-numbers li .page-numbers.prev:after,
+	.woocommerce-pagination ul.page-numbers li .page-numbers.next:after,
+	.woocommerce-pagination ul.page-numbers li .page-numbers{
+		background-color: #1c1c1c;
+	}
+	.woocommerce-pagination ul.page-numbers li .page-numbers.prev{
+		background-color: $primary_color;
+	}
+	.woocommerce-pagination ul.page-numbers li .page-numbers.next{
+		background-color: #222;
+	}
+
+	&.single-product .entry-summary .product_meta > div a{
+		color: $body_font_color;
+	}
+
+	&.single-product .woocommerce-tabs .woocommerce-Tabs-panel--reviews ol.commentlist li{
+		background-color: #1c1c1c;
+	}
+
+	&.woocommerce-cart .entry-content .woocommerce{
+		background-color: #1c1c1c;
+	}
+	&.woocommerce-cart table.cart td{
+		background-color: #1c1c1c;
+	}
+	&.woocommerce-cart .coupon .coupon-wrap{
+		background-color: #222;
+	}
+	@media (min-width: $screen_md_min){
+		&.woocommerce-checkout form.checkout {
+		    background: #222;
+		}
+	}
+	table tbody td,
+	table tbody tr:nth-child(2n) td{
+		background-color: #121212;
+	}
+
+	&.single-crw_stories .single-stories-footer .detail-categories{
+		color: $body_font_color;
+	}
+	.widget_categories ul li a{
+		background-color: #1c1c1c;
+		border-bottom: 0.5px solid rgba(221, 221, 221,0.5);
+	}
+	@media (min-width: $screen_xs_min){
+		&.single-crw_stories .meta-wrap {
+		    background-color: #1c1c1c;
+		}
+	}
+
+	.tnp-widget-minimal input.tnp-email{
+		background-color: #1c1c1c;
+	}
+	.select2-container--default .select2-selection--single{
+		background-color: #1c1c1c;
+	}
+	&.woocommerce-account form.login{
+		color: $body_font_color;
+	}
+	.event-ticket-form{
+		background-color: #222;
+	}
+	table th{
+		background: #000;
+	}
+
+	#tribe-bar-form{
+		background: #222;
+	}
+	.tribe-bar-views-inner{
+		background-color: #1c1c1c;
+	}
+	#tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option a,
+	#tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option a:hover{
+		background-color: #1c1c1c;
+	}
+	.tribe-events-day .tribe-events-day-time-slot .tribe-events-day-time-slot-heading{
+		background: #222;
+	}
+	.causes-archive-grid.layout-causes-1 .entry-info .give-btn:hover{
+		color: #1c1c1c;
+	}
+
+	/* element */
+	.vc_grid-item.events-style-1 .vc_gitem-zone-c .events-schedule > div{
+		color: $body_font_color;
+	}
+	.vc_grid-item.events-style-1 .vc_gitem-zone-c .org-wrap{
+		border-top-color: #6f6f6f;
+	}
+	.vc_grid-item.events-style-1 .vc_gitem-zone-c{
+		background-color: #1c1c1c;
+	}
+	.vc_grid-item.events-style-1 .vc_grid-item-mini:before{
+		content: none;
+	}
+
+	.vc_grid-item.cause-style1 .vc_gitem-zone-c{
+		background-color: #1c1c1c;
+	}
+	.vc_grid-item.cause-style1 .post-excerpt{
+		color: $body_font_color;
+	}
+	.red-causes-carousel .entry-info .donation-amount-wrap{
+		background: #1c1c1c;
+	}
+	.red-causes-carousel .owl-nav > div{
+		background-color: #1c1c1c;
+	}
+	.red-fancybox.layout-6{
+		background-color: #1c1c1c;
+	}
+	.vc_grid-item.events-style-2 .list-event-action .close-ticket{
+		background-color: #525252;
+	    border-color: #525252;
+	}
+	.causes-archive-grid.layout-causes-2 .entry-info .donation-amount-wrap .donate-progress .give-progress-bar{
+		background-color: #ddd;
+	}
+	&.woocommerce-cart table.cart td.product-name dl.variation{
+		color: $body_font_color;
+	}
+	.error-404{
+	    background-color: #121212;
+	}
+	.navigation.pagination .page-numbers + .page-numbers:before{
+		background-color: #545454;
+	}
+	.red-nav-extra .red-header-popup .red-popup{
+		background-color: #121212;
+	}
+	.red-nav-extra .red-header-popup .header-icon.cart span .cart_total{
+		background-color: #fff;
+    	color: #262626;
+	}
+	.overlay-wrap .overlay{
+		background-color: #222;
+	}
+	#tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option a{
+		color: $body_font_color;
+	}
+	&.woocommerce-cart table.cart th{
+	    background: #1c1c1c;
+    	border-color: #1c1c1c;
+	}
+	&.woocommerce-cart .cart-collaterals table th, 
+	&.woocommerce-cart .cart-collaterals table td{
+		background-color: $primary_color !important;
+	}
+}

@@ -1,0 +1,265 @@
+form {
+	input[type="text"],
+	input[type="email"],
+	input[type="phone"],
+	input[type="tel"],
+	input[type="password"],
+	input[type="search"],
+	input[type="time"],
+	input[type="url"],
+	input[type="file"],
+	input[type="image"],
+	select,
+	textarea{
+		width: 100%;
+		padding: $form_field_inside_space;
+		font-size: $form_field_font_size;
+		line-height: 27px;
+		height: 55px;
+		border: $form_field_border;
+		background-color: $form_field_bg;
+		text-align: inherit;
+	    letter-spacing: 0.03em;
+	    color: $form_field_color;
+		@include border-radius($form_field_radius);
+		@include box-shadow(0,0,16px,rgba(0,0,0,0.04));
+		@include transition();
+		@include placeholder(){
+			color: $placeholder_color;
+			font-size: 12px;
+			letter-spacing: 0.03em;
+			font-style: italic;
+		};
+		&:hover,
+		&:active,
+		&:focus{
+			color: $form_field_color;
+			border-color: $primary_color; 
+			@include box-shadow(3px,1px,16px,rgba(0,0,0,0.2));
+		}
+		&.require,
+		&.required{
+			border-color: red;
+		}
+	} 
+}
+select,
+textarea{
+	width: 100%;
+	padding: $form_field_inside_space;
+	font-size: $form_field_font_size;
+	line-height: 27px;
+	border: $form_field_border;
+	background-color: $form_field_bg;
+	text-align: inherit;
+    letter-spacing: 0.03em;
+    color: $form_field_color;
+	@include border-radius($form_field_radius);
+	@include box-shadow(0,0,16px,rgba(0,0,0,0.04));
+	@include transition();
+	@include placeholder(){
+		color: $placeholder_color;
+		font-size: 12px;
+		letter-spacing: 0.03em;
+		font-style: italic;
+	};
+	&:hover,
+	&:active,
+	&:focus{
+		color: $form_field_color;
+		border-color: $primary_color; 
+	}
+	&.require,
+	&.required{
+		border-color: red;
+	}
+}
+
+textarea{
+	vertical-align: top;
+}
+/* post-password-form */
+form.post-password-form{
+	input[name="post_password"]{
+		margin-bottom: 0;
+	}
+	[for*="pwbox-"]{
+		display: inline-block;
+		+ input[type="submit"]{
+			padding: $form_field_inside_space;
+			font-family: $form_field_font_family;
+			font-size: $form_field_font_size;
+			line-height: #{$form_field_font_size + 10px};
+			border: $form_field_border;
+			border-color: $btn_default_border_color;
+			margin-top: 25px;
+			&:hover{
+				border-color: $btn_default_bg_hover;
+			}
+		}
+	}
+}
+/* Place Holder Text */
+::-moz-placeholder{
+	color: $placeholder_color;
+}
+:-ms-input-placeholder {
+	color: $placeholder_color;
+}
+::-webkit-input-placeholder  {
+	color: $placeholder_color;
+}
+::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+.wpcf7-form{
+	p{
+		margin-bottom: 10px;
+	}
+	textarea{
+		height: 185px;
+	}
+	.btn-send{
+		margin-bottom: 0;
+		margin-top: 33px;
+	}
+}
+/* for IE10+ */
+select::-ms-expand {
+    display: none;
+}
+form input::-ms-clear,
+form input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0; 
+}
+/* Custom form */
+.ajax-loader{
+	&:not(.is-active){
+		display: none !important;
+	}
+}
+.modal{
+	@media (max-width: $screen_xs_max){
+		padding-right: 0 !important;
+	}
+} 
+.event-ticket-form{
+	padding: 10px 15px;
+	.form-close{
+		float: right;
+	    color: $heading_color;
+	    font-size: 20px;
+	    padding: 5px;
+	    cursor: pointer;
+	    line-height: 1;
+	    @include transition();
+	    &:hover{
+	    	color: $primary_color;
+	    }
+	}
+	.causes-form-wrap{
+		padding: 30px 35px;
+		@media (max-width: $screen_sm_max){
+			padding: 30px 0;
+		}
+	}
+	table{
+		th{
+			font-weight: 700;
+			@media (max-width: $screen_xs_max){
+				display: none;
+			}
+		}
+		td{
+			@media (max-width: $screen_xs_max){
+				display: block;
+				&:before{
+					content: attr(data-title);
+			    	display: block;
+			    	font-weight: 700;
+				}
+			}
+			@media (max-width: $screen_xxs_max){
+				padding-left: 0;
+				padding-right: 0;
+				background-color: transparent !important;
+			}
+			.btn{
+				padding: 8px 12px;
+				line-height: 1;
+				border-radius: 3px;
+			    text-transform: capitalize;
+			    @media (min-width: $screen_sm_min){
+			    	float: right;
+			    }
+			}
+			p{
+				margin: 0;
+			}
+		}
+		table{
+			th,td{
+				padding: 0;
+				background-color: transparent !important;
+			}
+		}
+	}
+	.row-amount{
+		input[type="text"]{
+			width: 92%;
+			margin-right: 5px;
+		}
+		.dynamic-data{
+			margin: 0 -5px;
+			.button{
+				line-height: 1;
+			    padding: 15px 18px;
+			    margin: 5px;
+			    border-radius: 3px;
+			    &.active{
+			    	color: $btn_default_color_hover;
+					border-color: $btn_default_border_color_hover;
+					background-color: $btn_default_bg_hover;
+			    }
+			}
+		}
+	}
+	.remove-ticket-item{
+	    text-align: center;
+	    color: #da5252;
+	    font-weight: 700;
+	    cursor: pointer;
+	    @include transition();
+	    &:hover{
+	    	color: $primary_color;
+	    }
+	}
+	.action-row{
+		margin-top: 20px;
+		.btn{
+			@media (max-width: $screen_xxs_max){
+				padding: 10px 30px;
+			}
+		}
+	}
+
+}
+.loading-state{
+	padding: 100px 70px;
+	font-size: 20px;
+	@media (max-width: $screen_xs_max){
+		padding: 50px 15px;
+		font-size: 16px;
+	}
+}
+.payment-result-form{
+	padding: 50px 70px;
+	font-size: 20px;
+	@media (max-width: $screen_xs_max){
+		padding: 30px 15px;
+		font-size: 16px;
+	}
+}

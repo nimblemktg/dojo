@@ -1,0 +1,146 @@
+# Copyright (C) 2019 rocketgenius
+# This file is distributed under the same license as the Gravity Forms 2Checkout Add-On plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Gravity Forms 2Checkout Add-On 1.0\n"
+"Report-Msgid-Bugs-To: https://gravityforms.com/support\n"
+"Last-Translator: Gravity Forms <support@gravityforms.com>\n"
+"Language-Team: Gravity Forms <support@gravityforms.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-06-14T17:12:13+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.2.0\n"
+"X-Domain: gravityforms2checkout\n"
+
+#. Plugin Name of the plugin
+msgid "Gravity Forms 2Checkout Add-On"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "http://www.gravityforms.com"
+msgstr ""
+
+#. Description of the plugin
+msgid "Integrates Gravity Forms with 2Checkout, enabling end users to purchase goods and services through Gravity Forms."
+msgstr ""
+
+#. Author of the plugin
+msgid "rocketgenius"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://www.rocketgenius.com"
+msgstr ""
+
+#: class-gf-2checkout.php:313
+msgid "API Mode"
+msgstr ""
+
+#: class-gf-2checkout.php:320
+msgid "Production"
+msgstr ""
+
+#: class-gf-2checkout.php:324
+msgid "Sandbox"
+msgstr ""
+
+#: class-gf-2checkout.php:332
+msgid "Production Credentials"
+msgstr ""
+
+#: class-gf-2checkout.php:336
+#: class-gf-2checkout.php:376
+msgid "Account Number"
+msgstr ""
+
+#: class-gf-2checkout.php:342
+#: class-gf-2checkout.php:382
+msgid "Publishable Key"
+msgstr ""
+
+#: class-gf-2checkout.php:348
+#: class-gf-2checkout.php:388
+msgid "Private Key"
+msgstr ""
+
+#: class-gf-2checkout.php:356
+#: class-gf-2checkout.php:396
+msgid "Username"
+msgstr ""
+
+#: class-gf-2checkout.php:363
+#: class-gf-2checkout.php:403
+msgid "Password"
+msgstr ""
+
+#: class-gf-2checkout.php:372
+msgid "Sandbox Credentials"
+msgstr ""
+
+#: class-gf-2checkout.php:511
+msgid "Email"
+msgstr ""
+
+#: class-gf-2checkout.php:512
+msgid "Address"
+msgstr ""
+
+#: class-gf-2checkout.php:513
+msgid "Address 2"
+msgstr ""
+
+#: class-gf-2checkout.php:514
+msgid "City"
+msgstr ""
+
+#: class-gf-2checkout.php:515
+msgid "State"
+msgstr ""
+
+#: class-gf-2checkout.php:516
+msgid "Zip"
+msgstr ""
+
+#: class-gf-2checkout.php:517
+msgid "Country"
+msgstr ""
+
+#: class-gf-2checkout.php:518
+msgid "Phone Number"
+msgstr ""
+
+#: class-gf-2checkout.php:538
+msgid "week(s)"
+msgstr ""
+
+#: class-gf-2checkout.php:539
+msgid "month(s)"
+msgstr ""
+
+#: class-gf-2checkout.php:540
+msgid "year(s)"
+msgstr ""
+
+#: class-gf-2checkout.php:682
+#: class-gf-2checkout.php:800
+#: class-gf-2checkout.php:860
+msgid "Unable to initialize API."
+msgstr ""
+
+#: class-gf-2checkout.php:1181
+msgid "You must provide the cardholder's name."
+msgstr ""
+
+#: class-gf-2checkout.php:1186
+msgid "You must provide your email address."
+msgstr ""
+
+#: class-gf-2checkout.php:1191
+msgid "You must provide your phone number."
+msgstr ""
+
+#: class-gf-2checkout.php:1196
+msgid "You must provide a valid billing address."
+msgstr ""

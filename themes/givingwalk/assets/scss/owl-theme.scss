@@ -1,0 +1,218 @@
+.red-carousel {
+    position: relative;
+    display: none;
+    cursor: ew-resize;
+    .owl-stage-outer{
+        overflow: hidden;
+        @include css3-prefix('animation-duration', '1s');
+        @include css3-prefix('animation-fill-mode','both');
+        @include css3-prefix('animation-name','zoomOut');
+    }
+    + .owl-preload{
+        min-height: 300px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        &:before{
+            content: "";
+            display: block;
+            width: 41px;
+            height: 41px;
+            margin: auto;
+            background: url(../images/ajaxloading.png) center center no-repeat;
+            @include animation(CMSSpin 1s infinite linear);
+        }
+    }
+    &.owl-loaded{
+        display: block;
+        .owl-stage-outer{
+            @include css3-prefix('animation-name','zoomIn');
+        }
+        + .owl-preload{
+            display: none;
+        }
+    } 
+}
+
+.owl-rtl{
+    .owl-item{
+        float: right;
+    }
+}
+
+.owl-nav,
+.owl-dots{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: center;
+    > div {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+        cursor: pointer;
+        text-align: center;
+    }
+    &.disabled{
+        display: none;
+    }
+}
+.owl-nav{
+    [class*='owl-'] > i{
+        @include transition();
+    }
+    &.inside-br{
+        position: absolute;
+        bottom: 89px;
+        right: 69px;
+        margin: 0;
+        @media (max-width: $screen-xs-max) {
+            bottom: 35px;
+            right: 35px;
+        }
+        > div > i{
+            line-height: 38px;
+            color: $white;
+            &:hover{
+                background-color: $white;
+                border-color: $white;
+            }
+        }
+    }
+    &.nav-vertical{
+        padding: 0;
+        margin: 0;
+        justify-content: space-between;
+        > [class*='owl-']{
+            padding: 0;
+            position: absolute;
+            top: 50%;
+            @include transform(translateY(-50%));
+        }
+        &.inside {
+            > .owl-prev{
+                left: 30px;
+            }
+            > .owl-next{
+                right: 30px;
+            }
+        }
+        &.outside {
+            @media (min-width: 1366px){
+                > .owl-prev{
+                  left: -80px;
+                }
+                > .owl-next{
+                  right: -80px;
+                }
+            }
+        }
+    }
+    /* Dots in Nav */
+    .owl-dots{
+        border: none;
+        width: auto;
+        height: auto;
+        padding-top: 0;
+        align-items: center;
+        &:hover{
+            background-color: transparent;
+        } 
+    }
+    &.disabled{
+        display: none;
+    }
+}
+
+.has-dots .owl-nav{
+    &.nav-vertical{
+        margin-top: -30px;  /* make sure nav in center of item when have dots. 55px is 1/2 height of dots */
+    }
+}
+.owl-nav .owl-dots, /* Dots in Nav */
+.owl-dots{
+    .owl-dot{
+        span{
+            display: block;
+            width: 13px;
+            height: 13px;
+            background: transparent;
+            border: $main_border;
+            @include border-radius(50%);
+            @include transition();
+        }
+        &:hover ,
+        &.active{
+            span{
+            background: $main_border_color;
+            }
+        }
+    }
+}
+.owl-dots,
+.owl-dots.dots-progress{
+    &.dotContainerTop {
+        padding-top: 0;
+        margin-bottom: 35px;
+    }
+}
+/* Dots Thumbnail */
+.dots-thumbnail{
+    .owl-dot{
+        width: 50px;
+        height: 50px;
+    }
+}
+/* Dots Progress */
+.owl-dots.dots-progress{
+    margin-top: 5px;
+    .owl-dot{
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        span{
+            width: 100%;
+            height: 8px;
+            background-color: #9B9B9B;
+            margin-left: 0;
+            margin-right: 0;
+            border: none;
+            @include border-radius(0);
+        }
+        &:hover,
+        &.active{
+            span{
+                background-color: #9B9B9B;
+            }
+            ~ .owl-dot{
+                  span{
+                  	background-color: #EEEEEE;
+                  }
+                  &:hover{
+                  	span{
+                    		background-color: #9B9B9B;
+                    	}
+                  }
+            }
+        }
+    }
+    &:hover{
+        .owl-dot{
+            span{
+                background-color: #9B9B9B;
+            }
+        }
+    }
+}
+
+
+.owl-min-height-618{
+    .red-item {
+        min-height: 618px;
+    }
+}
